@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.css'
 
 export const NavBar = () => {
     return (
@@ -33,31 +35,8 @@ export const NavBar = () => {
                     </ul>
                 </div>
 
-                <div className="d-flex align-items-center">
-
-                    <a className="text-reset me-3">
-                        <i className="fas fa-shopping-cart"></i>
-                    </a>
-
-                    <div className="dropdown">
-                        <a
-                            className="dropdown-toggle d-flex align-items-center hidden-arrow"
-
-                            id="navbarDropdownMenuAvatar"
-                            role="button"
-                            data-mdb-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <img
-                                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                                className="rounded-circle"
-                                height="25"
-                                alt="Black and White Portrait of a Man"
-                                loading="lazy"
-                            />
-                        </a>
-                    </div>
-                </div>
+                <CartWidget className="cart-widget" /><span>4</span> 
+                
             </div>
         </nav>
     );
