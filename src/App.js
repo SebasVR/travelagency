@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
-import { About } from './pages/About/About';
-import Home from './pages/Home/Home';
-import Products from './pages/Products/Products';
+import { About } from './components/About/About';
+import Home from './components/Home/Home';
+import Products from './components/Products/Products';
 import { Route, Routes } from 'react-router-dom';
-import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
     <>
       {/* Importamos el componente NavBar */}
       <NavBar />
-      
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
       </Routes>
 
       <ItemListContainer />
-      
+
     </>
 
   );

@@ -1,4 +1,5 @@
 import User from "./User"
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemListContainer.css'
 
 export const ItemListContainer = ({ CursoCoder = "ReactJS", Profesor = "Conrado Lanusse" }) => {
@@ -20,6 +21,10 @@ export const ItemListContainer = ({ CursoCoder = "ReactJS", Profesor = "Conrado 
             <hr />
             <h1>Datos del estudiante:</h1>
             <User usuario={usuarioCoder[0]} />
+            <hr />
+            <hr />
+            <hr />
+            <ItemCount  stock="5" initial="1"/>
         </div>
     );
 }
