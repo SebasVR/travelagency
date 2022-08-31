@@ -24,7 +24,7 @@ export const ItemListContainer = ({ CursoCoder = "ReactJS", Profesor = "Conrado 
             <hr />
             <hr />
             <hr />
-            <ItemCount  stock="5" initial="1"/>
+            <ItemCount  stock={5} initial={1}/>
         </div>
     );
 }

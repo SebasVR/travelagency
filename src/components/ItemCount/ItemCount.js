@@ -1,34 +1,28 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 const ItemCount = ({ stock, initial, onAdd }) => {
 
-    const [counter, setCounter] = useState(parseInt(initial))
+    const [counter, setCounter] = useState(initial)
 
     const handleSumar = () => {
-        if (parseInt(stock) > counter) {
+        if (stock > counter) {
             setCounter(counter + 1)
             onAdd = counter + 1;
             console.log("onAdd", onAdd);
         }
-        if(counter > parseInt(stock)){
+        if(counter > stock){
             console.log("Ya no puede seleccionar mas productos, no hay stock");
         }
         
     }
 
     const handleRestar = () => {
-        if (counter > 0) {
+        if (counter > 1) {
             setCounter(counter - 1)
             onAdd = counter - 1;
             console.log("onAdd", onAdd);
         }
     }
-
-    useEffect(() => {
-        
-    }, [counter])
-
-
 
     return (
         <div className="container my-5">
