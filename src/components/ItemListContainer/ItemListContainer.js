@@ -1,32 +1,31 @@
-import User from "./User"
-import ItemCount from '../ItemCount/ItemCount';
+import { useEffect, useState } from "react"
+import { pedirDatos } from "../../helpers/pedirDatos"
+import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.css'
 
-export const ItemListContainer = ({ CursoCoder = "ReactJS", Profesor = "Conrado Lanusse" }) => {
-    const usuarioCoder = [
-        {
-            nombre: 'Juan Sebastian',
-            apellido: 'Vargas Rocha',
-            ciudad: 'Medellín, Colombia',
-            edad: 28
-        }
-    ]
+export const ItemListContainer = () => {
+
+    const [productos, setProductos] = useState([])
+
+    useEffect(() => {
+        pedirDatos()
+            .then((res) => {
+                setProductos(res)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                console.log("Fin del proceso")
+            })
+    }, [])
 
 
     return (
         <div>
-            <hr />
-            <h1 className="text-primary">Estamos en el curso: {CursoCoder}</h1>
-            <h1 className="text-primary">El profesor es: {Profesor}</h1>
-            <hr />
-            <h1>Datos del estudiante:</h1>
-            <User usuario={usuarioCoder[0]} />
-            <hr />
-            <hr />
-            <hr />
-            <ItemCount  stock={5} initial={1}/>
+            <ItemList productos={productos}/>
         </div>
-    );
+    )
 }
 export default ItemListContainer
 
