@@ -4,14 +4,14 @@ import { NavBar } from './components/NavBar/NavBar';
 import { About } from './components/About/About';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
 
   return (
-    <>
-      {/* Importamos el componente NavBar */}
+    <BrowserRouter>
+
       <NavBar />
 
       <Routes>
@@ -23,7 +23,7 @@ function App() {
 
       <ItemListContainer />
 
-    </>
+    </BrowserRouter>
 
   );
 }
