@@ -8,28 +8,35 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const { itemId } = useParams()
+    const {itemId} = useParams()
+
+    console.log(itemId)
+    console.log(item)
 
     useEffect(() => {
         setLoading(true)
 
         pedirDatos()
             .then((res) => {
-                setItem(res.find((prod) => prod.id === Number(itemId)))
+                setItem( res.find((prod) => prod.id === Number(itemId)) )
             })
             .catch(err => console.log(err))
             .finally(() => {
                 setLoading(false)
             })
-    }, [itemId])
+        // setear el estado con un único producto
+
+    }, [])
 
     return (
         <div>
             {
                 loading
-                    ? <h2>Loading...</h2>
-                    : <ItemDetail item={item} />
+                ? <h2>Loading...</h2>
+                : <ItemDetail item={item} />
             }
+            
+
         </div>
     )
 }
