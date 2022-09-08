@@ -24,7 +24,6 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-        // setear el estado con un único producto
 
     }, [])
 
@@ -35,7 +34,6 @@ const ItemDetailContainer = () => {
                 ? <h2>Loading...</h2>
                 : <ItemDetail item={item} />
             }
-            
 
         </div>
     )
