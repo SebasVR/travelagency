@@ -12,15 +12,17 @@ export const stock = [
     {
         id: 1,
         nombre: 'Vuelos a Cartagena',
+        promo: null,
         precio: 250000,
         img: CartagenaVuelo,
-        stock: 10,
+        stock: 0,
         desc: '10% descuento',
         category: 'vuelos'
     },
     {
         id: 2,
         nombre: 'Vuelos a Miami',
+        promo: null,
         precio: 1200000,
         img: MiamiVuelo,
         stock: 4,
@@ -30,6 +32,7 @@ export const stock = [
     {
         id: 3,
         nombre: 'Vuelos a Punta Cana',
+        promo: null,
         precio: 890000,
         img: PuntaCanaVuelo,
         stock: 5,
@@ -39,6 +42,7 @@ export const stock = [
     {
         id: 4,
         nombre: 'Vuelos a San Andres',
+        promo: null,
         precio: 560000,
         img: SanAndresVuelo,
         stock: 50,
@@ -48,15 +52,17 @@ export const stock = [
     {
         id: 5,
         nombre: 'Vuelos + Hotel las Americas Torre del Mar',
+        promo: null,
         precio: 1336000,
         img: TorreDelMarPaquete,
-        stock: 15,
+        stock: 0,
         desc: '60% descuento',
         category: 'paquetes'
     },
     {
         id: 6,
         nombre: 'Vuelos + Hotel Cartagena Plaza',
+        promo: null,
         precio: 1104000,
         img: CartagenaPaquete,
         stock: 10,
@@ -66,6 +72,7 @@ export const stock = [
     {
         id: 7,
         nombre: 'Vuelos + Hotel en Santa Marta La Riviera',
+        promo: null,
         precio: 796537,
         img: TayronaPaquete,
         stock: 18,
@@ -75,6 +82,7 @@ export const stock = [
     {
         id: 8,
         nombre: 'Hotel en Punta Cana Dreams Palm Beach Punta Cana',
+        promo: null,
         precio: 3159000,
         img: DreamsHotel,
         stock: 45,
@@ -84,9 +92,10 @@ export const stock = [
     {
         id: 9,
         nombre: 'Hotel en San Jose del Cabo Riu Palace Cabo San Lucas',
+        promo: null,
         precio: 5452359,
         img: RiuHotel,
-        stock: 80,
+        stock: 0,
         desc: '65% descuento',
         category: 'hoteles'
     },

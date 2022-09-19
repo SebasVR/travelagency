@@ -1,12 +1,20 @@
 import { useCartContext } from "../../context/CartContext"
 import { BsFillTrashFill } from 'react-icons/bs'
-import { useDarkMode } from "../../context/DarkModeContext"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
     const { cart, cartTotal, emptyCart, removeItem } = useCartContext()
-    const { darkMode } = useDarkMode()
-    console.log(darkMode)
+
+    if (cart.length === 0) {
+        return ( 
+            <div className="container my-5">
+                <h2>Tu carrito está vacío</h2>
+                <hr/>
+                <Link to="/" className="btn btn-primary">Ir a comprar</Link>
+            </div>
+        )
+    }
 
     return (
         <div className="container my-5">
@@ -14,7 +22,6 @@ const Cart = () => {
             <hr/>
 
             { cart.map((item) => (
-                // <CartItem key={} item={item}/>
                 <div key={item.id}>
                     <h3>{item.nombre}</h3>
                     <p>Precio: {item.precio}</p>

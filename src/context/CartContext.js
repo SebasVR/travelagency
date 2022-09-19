@@ -12,8 +12,18 @@ export const CartProvider = ({children}) => {
 
 
     const addToCart = (item) => {
+      // const newCart = cart.slice()
+      // newCart.push(itemToCart)
       setCart([...cart, item])
     }
+
+    // editar cantidad
+    // const increaseQuantityInCart = (id) => {
+        // const newCart = cart.slice() || [...cart]
+        // buscar el item a modificar segun ID
+        // verificar qeu la modificación sea posible (IF)
+        // setCart(newCart)
+    // }
 
     const removeItem = (id) => {
         setCart( cart.filter((item) => item.id !== id) )

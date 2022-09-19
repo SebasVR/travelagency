@@ -2,16 +2,14 @@ import { useEffect, useState } from "react"
 import { pedirDatos } from "../../helpers/pedirDatos"
 import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail"
+import Loader from "../Loader/Loader"
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({darkMode}) => {
 
     const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
 
     const {itemId} = useParams()
-
-    console.log(itemId)
-    console.log(item)
 
     useEffect(() => {
         setLoading(true)
@@ -24,6 +22,7 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
+        // setear el estado con un único producto
 
     }, [itemId])
 
@@ -31,9 +30,10 @@ const ItemDetailContainer = () => {
         <div>
             {
                 loading
-                ? <h2>Loading...</h2>
+                ? <Loader/>
                 : <ItemDetail item={item} />
             }
+            
 
         </div>
     )

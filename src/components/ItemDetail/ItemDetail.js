@@ -28,10 +28,9 @@ const ItemDetail = ({item}) => {
             <p>{item.desc}</p>
             <p>{item.category}</p>
             <h4>{item.precio}</h4>
-            <hr/>
 
+            {item.promo && <h5 style={{color: 'red'}}>{item.promo}% OFF !!</h5>}
             <hr/>
-
             
             {
                 isInCart(item.id)

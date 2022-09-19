@@ -1,3 +1,11 @@
-svg {
-    font-size: 40px;
+.widget {
+    font-size: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.widget-visible {
+    visibility: visible;
+    opacity: 1;
 }
